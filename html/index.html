@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+</head>
+
+<body>
+    <!-- header start -->
+    <header class="header_sec bg-gray-50 py-3 lg:py-0 shadow-sm border-b border-gray-50 sticky top-0 z-50">
+        <div class="container">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="block lg:hidden mr-3">
+                        <button data-modal-trigger="" aria-controls="drawer-name-left" aria-expanded="false"
+                            type="button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-menu-deep">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M4 6h16" />
+                                <path d="M7 12h13" />
+                                <path d="M10 18h10" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="logo mr-2 lg:mr-12">
+                        <a href="index.html">
+                            <svg viewBox="0 0 248 31" class="text-slate-900 w-auto h-5">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M25.517 0C18.712 0 14.46 3.382 12.758 10.146c2.552-3.382 5.529-4.65 8.931-3.805 1.941.482 3.329 1.882 4.864 3.432 2.502 2.524 5.398 5.445 11.722 5.445 6.804 0 11.057-3.382 12.758-10.145-2.551 3.382-5.528 4.65-8.93 3.804-1.942-.482-3.33-1.882-4.865-3.431C34.736 2.92 31.841 0 25.517 0zM12.758 15.218C5.954 15.218 1.701 18.6 0 25.364c2.552-3.382 5.529-4.65 8.93-3.805 1.942.482 3.33 1.882 4.865 3.432 2.502 2.524 5.397 5.445 11.722 5.445 6.804 0 11.057-3.381 12.758-10.145-2.552 3.382-5.529 4.65-8.931 3.805-1.941-.483-3.329-1.883-4.864-3.432-2.502-2.524-5.398-5.446-11.722-5.446z"
+                                    fill="#38bdf8"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M76.546 12.825h-4.453v8.567c0 2.285 1.508 2.249 4.453 2.106v3.463c-5.962.714-8.332-.928-8.332-5.569v-8.567H64.91V9.112h3.304V4.318l3.879-1.143v5.937h4.453v3.713zM93.52 9.112h3.878v17.849h-3.878v-2.57c-1.365 1.891-3.484 3.034-6.285 3.034-4.884 0-8.942-4.105-8.942-9.389 0-5.318 4.058-9.388 8.942-9.388 2.801 0 4.92 1.142 6.285 2.999V9.112zm-5.674 14.636c3.232 0 5.674-2.392 5.674-5.712s-2.442-5.711-5.674-5.711-5.674 2.392-5.674 5.711c0 3.32 2.442 5.712 5.674 5.712zm16.016-17.313c-1.364 0-2.477-1.142-2.477-2.463a2.475 2.475 0 012.477-2.463 2.475 2.475 0 012.478 2.463c0 1.32-1.113 2.463-2.478 2.463zm-1.939 20.526V9.112h3.879v17.849h-3.879zm8.368 0V.9h3.878v26.06h-3.878zm29.053-17.849h4.094l-5.638 17.849h-3.807l-3.735-12.03-3.771 12.03h-3.806l-5.639-17.849h4.094l3.484 12.315 3.771-12.315h3.699l3.734 12.315 3.52-12.315zm8.906-2.677c-1.365 0-2.478-1.142-2.478-2.463a2.475 2.475 0 012.478-2.463 2.475 2.475 0 012.478 2.463c0 1.32-1.113 2.463-2.478 2.463zm-1.939 20.526V9.112h3.878v17.849h-3.878zm17.812-18.313c4.022 0 6.895 2.713 6.895 7.354V26.96h-3.878V16.394c0-2.713-1.58-4.14-4.022-4.14-2.55 0-4.561 1.499-4.561 5.14v9.567h-3.879V9.112h3.879v2.285c1.185-1.856 3.124-2.749 5.566-2.749zm25.282-6.675h3.879V26.96h-3.879v-2.57c-1.364 1.892-3.483 3.034-6.284 3.034-4.884 0-8.942-4.105-8.942-9.389 0-5.318 4.058-9.388 8.942-9.388 2.801 0 4.92 1.142 6.284 2.999V1.973zm-5.674 21.775c3.232 0 5.674-2.392 5.674-5.712s-2.442-5.711-5.674-5.711-5.674 2.392-5.674 5.711c0 3.32 2.442 5.712 5.674 5.712zm22.553 3.677c-5.423 0-9.481-4.105-9.481-9.389 0-5.318 4.058-9.388 9.481-9.388 3.519 0 6.572 1.82 8.008 4.605l-3.34 1.928c-.79-1.678-2.549-2.749-4.704-2.749-3.16 0-5.566 2.392-5.566 5.604 0 3.213 2.406 5.605 5.566 5.605 2.155 0 3.914-1.107 4.776-2.749l3.34 1.892c-1.508 2.82-4.561 4.64-8.08 4.64zm14.472-13.387c0 3.249 9.661 1.285 9.661 7.89 0 3.57-3.125 5.497-7.003 5.497-3.591 0-6.177-1.607-7.326-4.177l3.34-1.927c.574 1.606 2.011 2.57 3.986 2.57 1.724 0 3.052-.571 3.052-2 0-3.176-9.66-1.391-9.66-7.781 0-3.356 2.909-5.462 6.572-5.462 2.945 0 5.387 1.357 6.644 3.713l-3.268 1.82c-.647-1.392-1.904-2.035-3.376-2.035-1.401 0-2.622.607-2.622 1.892zm16.556 0c0 3.249 9.66 1.285 9.66 7.89 0 3.57-3.124 5.497-7.003 5.497-3.591 0-6.176-1.607-7.326-4.177l3.34-1.927c.575 1.606 2.011 2.57 3.986 2.57 1.724 0 3.053-.571 3.053-2 0-3.176-9.66-1.391-9.66-7.781 0-3.356 2.908-5.462 6.572-5.462 2.944 0 5.386 1.357 6.643 3.713l-3.268 1.82c-.646-1.392-1.903-2.035-3.375-2.035-1.401 0-2.622.607-2.622 1.892z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <nav class="nav hidden lg:block">
+                        <ul class="flex items-center">
+                            <li>
+                                <a href="#" class="nav-item">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-item">About Us</a>
+                            </li>
+                            <li class="group">
+                                <a href="#" class="nav-item dropdown relative">Services
+                                    <i class="fa fa-angle-down text-gray-500"></i>
+                                </a>
+                                <ul
+                                    class="dropdown-menu group-hover:opacity-100 group-hover:h-auto group-hover:translate-y-0">
+                                    <li><a class="item-link" href="#">Tailwind Css</a></li>
+                                    <li><a class="item-link" href="#">Laravel</a></li>
+                                    <li class="group child-group relative">
+                                        <a class="item-link dropdown relative" href="#">
+                                            Bootstrap
+                                            <i class="pt-1 fa fa-angle-right float-end"></i>
+                                        </a>
+                                        <ul
+                                            class="dropdown-menu translate-y-4 child-group-hover:opacity-100 child-group-hover:h-auto child-group-hover:translate-y-0">
+                                            <li><a class="item-link" href="#">Bootstrap SaSS</a></li>
+                                            <li><a class="item-link" href="#">Bootstrap Carousel</a></li>
+                                            <li><a class="item-link" href="#">Bootstrap Nav</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="item-link" href="#">Vite</a></li>
+                                    <li><a class="item-link" href="#">PHP</a></li>
+                                    <li><a class="item-link" href="#">HTML</a></li>
+                                </ul>
+                            </li>
+
+
+
+                            <li>
+                                <a href="#" class="nav-item">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-item">Contact Us</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn btn--primary sm:mr-2" data-modal-trigger=""
+                        aria-controls="loginModal" aria-expanded="false">Login</button>
+                    <button type="button" class="btn btn--secondary hidden sm:inline-block">Register</button>
+                </div>
+            </div>
+            <!-- mobile menu -->
+            <div id="drawer-name-left" data-modal-target="" class="absolute inset-0 overflow-hidden hidden">
+                <div data-modal-close="" data-modal-overlay="" tabindex="-1" data-class-in="opacity-[0.8]"
+                    data-class-out="opacity-0" class="offcanvas">
+                </div>
+                <div data-modal-wrapper="" data-class-in="translate-x-0" data-class-out="-translate-x-full"
+                    class="offcanvas-body scrolling-touch">
+                    <div class="offcanvas-header">
+                        <h3>LOGO</h3>
+                        <button data-modal-close="" class="modal-close" aria-label="Close">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <nav>
+                            <ul>
+                                <li><a href="#" class="nav--item">Home</a></li>
+                                <li><a href="#" class="nav--item">About Us</a></li>
+                                <li>
+                                    <div class="accordionExample">
+                                        <!-- one -->
+                                        <div class="">
+                                            <div
+                                                class="accordion-header rounded-none border-b border-gray-100 px-4 text-sm">
+                                                <span>Services</span>
+                                                <i class="fa fa-angle-down"></i>
+                                            </div>
+                                            <div class="accordion-body">
+                                                <ul>
+                                                    <li><a class="nav--item text-[13px] py-3 bg-gray-100"
+                                                            href="#">Tailwind Css</a>
+                                                    </li>
+                                                    <li><a class="nav--item text-[13px] py-3 bg-gray-100"
+                                                            href="#">Laravel</a></li>
+                                                    <li><a class="nav--item text-[13px] py-3 bg-gray-100"
+                                                            href="#">Bootstrap</a>
+                                                    </li>
+                                                    <li><a class="nav--item text-[13px] py-3 bg-gray-100"
+                                                            href="#">Vite</a></li>
+                                                    <li><a class="nav--item text-[13px] py-3 bg-gray-100"
+                                                            href="#">PHP</a></li>
+                                                    <li><a class="nav--item text-[13px] py-3 bg-gray-100"
+                                                            href="#">HTML</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><a href="#" class="nav--item">Blog</a></li>
+                                <li><a href="#" class="nav--item">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- banner  -->
+    <div class="banner_sec py-12 flex items-center lg:min-h-[600px] bg-gradient-to-tr from-indigo-100">
+        <div class="container">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class=" mb-6 text-xl sm:text-3xl lg:text-5xl font-inter font-bold lg:leading-tight">
+                    Rapidly build modern websites without ever leaving your HTML.</h2>
+                <p class=" mb-8 font-normal font-inter text-gray-600 text-sm leading-normal">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. <span class="font-semibold">Cumque dolores
+                        quod</span> saepe doloremque neque
+                    est, beatae reiciendis fugit obcaecati velit mollitia consequatur eligendi fugiat quo, ex id dolorem
+                    incidunt voluptate.
+                </p>
+                <button
+                    class="btn btn--primary py-3 sm:mr-5 duration-300 transition-all hover:shadow-sm hover:-translate-y-1">Get
+                    Started</button>
+                <button
+                    class="btn btn--secondary py-3 duration-300 transition-all hover:shadow-sm hover:-translate-y-1">Contact
+                    Us</button>
+            </div>
+        </div>
+    </div>
+    <!-- banner  -->
+
+    <!-- about -->
+    <div class="about_sec py-[60px]">
+        <div class="container">
+            <div class="grid lg:grid-cols-2 gap-5 items-center">
+                <div>
+                    <h4 class="text-2xl lg:text-3xl font-inter font-bold text-gray-900 mb-4">What is <span
+                            class="text-indigo-600 italic">Tailwind Css</span>
+                    </h4>
+                    <p class="text-[16px] leading-normal text-gray-600">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, eum eveniet fuga totam
+                        illum eligendi earum fugiat assumenda saepe, aut placeat aperiam adipisci impedit optio nam
+                        incidunt quo quaerat vero.
+
+                        Lorem ipsum, dolor sit amet <span class="font-semibold text-indigo-600">consectetur adipisicing
+                            elit.</span> Natus quam doloremque neque. Maxime
+                        quas a explicabo cumque iste eveniet. Rem dolores tempore commodi dolore neque praesentium dolor
+                        eveniet atque nulla odio officiis earum, nostrum nam fugiat laboriosam sed facilis impedit
+                        dignissimos consequuntur eligendi debitis.
+                    </p>
+                </div>
+                <div>
+                    <img src="assets/images/1.png" alt="Tailwind css">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about -->
+
+    <!-- services -->
+    <div class="service_section bg-gray-50 py-12 border-t border-b border-gray-100">
+        <div class="container">
+            <div class="text-center lg:max-w-xl mx-auto mb-12">
+                <h2 class="text-xl lg:text-3xl xl:text-4xl font-inter text-slate-900 font-bold mb-4">Our <span
+                        class="text-indigo-600">Top</span> Services</h2>
+                <p class="text-[15px] font-inter text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod laboriosam quo, velit dolorum sunt
+                    necessitatibus ut nostrum reiciendis? A, nemo?
+                </p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+                <div class="service-box border border-gray-200 bg-indigo-50 rounded-lg p-3 lg:p-5">
+                    <div class="icon mb-3">
+                        <img src="assets/images/bootstrap.svg" alt="Bootstra">
+                    </div>
+                    <div class="content">
+                        <h4 class="text-gray-900 font-bold font-inter mb-3">Bootstrap</h4>
+                        <p class="text-[15px] text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur qui molestias
+                            recusandae et modi.
+                        </p>
+                    </div>
+                </div>
+                <div class="service-box border border-g2ay-100 bg-red-50 rounded-lg p-3 lg:p-5">
+                    <div class="icon mb-3">
+                        <img src="assets/images/laravel.svg" alt="Bootstra">
+                    </div>
+                    <div class="content">
+                        <h4 class="text-gray-900 font-bold font-inter mb-3">Laravel</h4>
+                        <p class="text-[15px] text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur qui molestias
+                            recusandae et modi.
+                        </p>
+                    </div>
+                </div>
+                <div class="service-box border border-g2ay-100 bg-indigo-50 rounded-lg p-3 lg:p-5">
+                    <div class="icon mb-3">
+                        <img src="assets/images/php.svg" alt="Bootstra">
+                    </div>
+                    <div class="content">
+                        <h4 class="text-gray-900 font-bold font-inter mb-3">PHP</h4>
+                        <p class="text-[15px] text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur qui molestias
+                            recusandae et modi.
+                        </p>
+                    </div>
+                </div>
+                <div class="service-box border border-g2ay-100 bg-lime-50 rounded-lg p-3 lg:p-5">
+                    <div class="icon mb-3">
+                        <img src="assets/images/vite.svg" alt="Bootstra">
+                    </div>
+                    <div class="content">
+                        <h4 class="text-gray-900 font-bold font-inter mb-3">Vite</h4>
+                        <p class="text-[15px] text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur qui molestias
+                            recusandae et modi.
+                        </p>
+                    </div>
+                </div>
+                <div class="service-box border border-g2ay-100 bg-amber-50 rounded-lg p-3 lg:p-5">
+                    <div class="icon mb-3">
+                        <img src="assets/images/css.svg" alt="Bootstra">
+                    </div>
+                    <div class="content">
+                        <h4 class="text-gray-900 font-bold font-inter mb-3">CSS3</h4>
+                        <p class="text-[15px] text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur qui molestias
+                            recusandae et modi.
+                        </p>
+                    </div>
+                </div>
+                <div class="service-box border border-g2ay-100 bg-yellow-50 rounded-lg p-3 lg:p-5">
+                    <div class="icon mb-3">
+                        <img src="assets/images/jquery.svg" alt="Bootstra">
+                    </div>
+                    <div class="content">
+                        <h4 class="text-gray-900 font-bold font-inter mb-3">Jquery</h4>
+                        <p class="text-[15px] text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur qui molestias
+                            recusandae et modi.
+                        </p>
+                    </div>
+                </div>
+                <div class="service-box border border-g2ay-100 bg-indigo-50 rounded-lg p-3 lg:p-5">
+                    <div class="icon mb-3">
+                        <img src="assets/images/bootstrap.svg" alt="Bootstra">
+                    </div>
+                    <div class="content">
+                        <h4 class="text-gray-900 font-bold font-inter mb-3">Bootstrap</h4>
+                        <p class="text-[15px] text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur qui molestias
+                            recusandae et modi.
+                        </p>
+                    </div>
+                </div>
+                <div class="service-box border border-g2ay-100 bg-cyan-50 rounded-lg p-3 lg:p-5">
+                    <div class="icon mb-3">
+                        <img src="assets/images/tailwind.svg" alt="Bootstra">
+                    </div>
+                    <div class="content">
+                        <h4 class="text-gray-900 font-bold font-inter mb-3">Tailwind</h4>
+                        <p class="text-[15px] text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur qui molestias
+                            recusandae et modi.
+                        </p>
+                    </div>
+                </div>
+                <div class="service-box border border-g2ay-100 bg-red-50 rounded-lg p-3 lg:p-5">
+                    <div class="icon mb-3">
+                        <img src="assets/images/wordpress.svg" alt="Bootstra">
+                    </div>
+                    <div class="content">
+                        <h4 class="text-gray-900 font-bold font-inter mb-3">Wordpress</h4>
+                        <p class="text-[15px] text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur qui molestias
+                            recusandae et modi.
+                        </p>
+                    </div>
+                </div>
+                <div class="service-box border border-g2ay-100 bg-emerald-50 rounded-lg p-3 lg:p-5">
+                    <div class="icon mb-3">
+                        <img src="assets/images/figma.svg" alt="Bootstra">
+                    </div>
+                    <div class="content">
+                        <h4 class="text-gray-900 font-bold font-inter mb-3">Figma</h4>
+                        <p class="text-[15px] text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus pariatur qui molestias
+                            recusandae et modi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- services -->
+
+
+    <!-- faq -->
+    <div class="faq-section py-12">
+        <div class="container">
+            <div class="text-center lg:max-w-xl mx-auto mb-12">
+                <h2 class="text-xl lg:text-3xl xl:text-4xl font-inter text-slate-900 font-bold mb-4">Faq's</h2>
+                <p class="text-[15px] font-inter text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod laboriosam quo, velit dolorum sunt
+                    necessitatibus ut nostrum reiciendis? A, nemo?
+                </p>
+            </div>
+            <div class="xl:max-w-[700px] mx-auto">
+                <div class="accordionExample">
+                    <!-- one -->
+                    <div class="bg-white rounded-xl border mb-2">
+                        <div class="accordion-header">
+                            <span>Why do you use Tailwind CSS?</span>
+                            <i class="fa fa-angle-down"></i>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="p-4 border-t text-[16px] text-justify text-slate-700">
+                                Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to
+                                build custom designs. It allows for rapid prototyping and eliminates the need for
+                                writing
+                                custom CSS, making the development process more efficient and maintainable.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- two -->
+                    <div class="bg-white rounded-xl border mb-2">
+                        <div class="accordion-header">
+                            <span>What are the advantages of using Tailwind CSS?</span>
+                            <i class="fa fa-angle-down"></i>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="p-4 border-t text-[16px] text-justify text-slate-700">
+                                Tailwind CSS offers several advantages, including:
+                                <ul class="list-disc ml-5">
+                                    <li>Consistent design without writing custom CSS</li>
+                                    <li>Highly customizable design system</li>
+                                    <li>Faster development with pre-built utility classes</li>
+                                    <li>Small final CSS file size due to its purging feature</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- three -->
+                    <div class="bg-white rounded-xl border mb-2">
+                        <div class="accordion-header">
+                            <span>What is Web Development?</span>
+                            <i class="fa fa-angle-down"></i>
+                        </div>
+                        <div class="accordion-body">
+                            <div class="p-4 border-t text-[16px] text-justify text-slate-700">
+                                Web development refers to the work involved in creating, building, and maintaining
+                                websites.
+                                It encompasses a variety of tasks, including web design, web content development,
+                                client-side/server-side scripting, and network security configuration.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- faq -->
+
+    <!-- tabs -->
+    <div class="tabs-section py-12">
+        <div class="container">
+            <div class="text-center lg:max-w-xl mx-auto mb-12">
+                <h2 class="text-xl lg:text-3xl xl:text-4xl font-inter text-slate-900 font-bold mb-4">Tailwind Tabs</h2>
+                <p class="text-[15px] font-inter text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod laboriosam quo, velit dolorum sunt
+                    necessitatibus ut nostrum reiciendis? A, nemo?
+                </p>
+            </div>
+            <div class="xl:max-w-[700px] mx-auto">
+                <div class="navTab">
+                    <ul class="nav-tabs mb-3 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-4">
+                        <button class="tab-item active" id="tailwind-tab">Tailwind</button>
+                        <button class="tab-item" id="bootstrap-tab">Bootstrap</button>
+                        <button class="tab-item" id="foundation-tab">Foundation</button>
+                        <button class="tab-item" id="figma-tab">Figma</button>
+                        <button class="tab-item" id="wp-tab">Wordpress</button>
+                    </ul>
+                    <div class="tab-content" id="tabContent">
+                        <div class="tab-body active" id="tailwind">
+                            <div class="bg-gray-50 p-4">
+                                <h3 class="font-bold text-slate-900 font-inter mb-3">Tailwind</h3>
+                                <p class="text-slate-900 font-normal font-inter text-sm">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti nemo iste
+                                    doloribus animi voluptatibus asperiores ratione nulla dolores, quaerat adipisci hic
+                                    iure ut aliquam numquam eius quam, fugiat consequuntur! Ex consequatur doloribus
+                                    unde atque, reprehenderit a deserunt sit pariatur dolore laudantium eveniet iste
+                                    porro ratione et, itaque odio quidem expedita?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab-body" id="bootstrap">
+                            <div class="bg-red-50 p-4">
+                                <h3 class="font-bold text-slate-900 font-inter mb-3">Bootstrap</h3>
+                                <p class="text-slate-900 font-normal font-inter text-sm">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti nemo iste
+                                    doloribus animi voluptatibus asperiores ratione nulla dolores, quaerat adipisci hic
+                                    iure ut aliquam numquam eius quam, fugiat consequuntur! Ex consequatur doloribus
+                                    unde atque, reprehenderit a deserunt sit pariatur dolore laudantium eveniet iste
+                                    porro ratione et, itaque odio quidem expedita?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab-body" id="foundation">
+                            <div class="bg-lime-50 p-4">
+                                <h3 class="font-bold text-slate-900 font-inter mb-3">Foundation</h3>
+                                <p class="text-slate-900 font-normal font-inter text-sm">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti nemo iste
+                                    doloribus animi voluptatibus asperiores ratione nulla dolores, quaerat adipisci hic
+                                    iure ut aliquam numquam eius quam, fugiat consequuntur! Ex consequatur doloribus
+                                    unde atque, reprehenderit a deserunt sit pariatur dolore laudantium eveniet iste
+                                    porro ratione et, itaque odio quidem expedita?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab-body" id="figma">
+                            <div class="bg-cyan-50 p-4">
+                                <h3 class="font-bold text-slate-900 font-inter mb-3">Figma</h3>
+                                <p class="text-slate-900 font-normal font-inter text-sm">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti nemo iste
+                                    doloribus animi voluptatibus asperiores ratione nulla dolores, quaerat adipisci hic
+                                    iure ut aliquam numquam eius quam, fugiat consequuntur! Ex consequatur doloribus
+                                    unde atque, reprehenderit a deserunt sit pariatur dolore laudantium eveniet iste
+                                    porro ratione et, itaque odio quidem expedita?
+                                </p>
+                            </div>
+                        </div>
+                        <div class="tab-body" id="wp">
+                            <div class="bg-indigo-50 p-4">
+                                <h3 class="font-bold text-slate-900 font-inter mb-3">Wp</h3>
+                                <p class="text-slate-900 font-normal font-inter text-sm">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corrupti nemo iste
+                                    doloribus animi voluptatibus asperiores ratione nulla dolores, quaerat adipisci hic
+                                    iure ut aliquam numquam eius quam, fugiat consequuntur! Ex consequatur doloribus
+                                    unde atque, reprehenderit a deserunt sit pariatur dolore laudantium eveniet iste
+                                    porro ratione et, itaque odio quidem expedita?
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- tabs -->
+
+
+    <!-- login modal -->
+    <div id="loginModal" data-modal-target class="hidden" tabindex="-1">
+        <div class="flex items-center justify-center fixed inset-0 z-50">
+            <div data-modal-close data-modal-overlay tabindex="-1" data-class-in="opacity-[0.8]"
+                data-class-out="opacity-0" class="modal-backdrop"></div>
+            <div data-modal-wrapper data-class-in="opacity-100 translate-y-0" data-class-out="opacity-0 translate-y-5"
+                class="modal-dialog scrolling-touch">
+                <div class="modal-header">
+                    <h3 class="text-gray-900 font-inter font-normal text-lg">
+                        Login
+                    </h3>
+                    <button data-modal-close aria-label="Close" type="button" class="modal-close">
+                        <i class="fa fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-content">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="" class="form-label">Username or Email <span
+                                    class="text-red-600 font-normal">*</span></label>
+                            <input type="text" name="username" class="form-control" placeholder="Username or Email"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="form-label">Password <span
+                                    class="text-red-600 font-normal">*</span></label>
+                            <div class="relative">
+                                <input type="password" name="username" class="form-control pr-7" placeholder="Password"
+                                    required>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
+                                    <i class="fa-regular fa-eye text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input id="remember" name="remember" type="checkbox"
+                                class="h-4 w-4 rounded border-indigo-600 text-indigo-600 focus:ring-0 focus:ring-offset-0 cursor-pointer">
+                            <label for="remember" class="text-gray-700 font-inter text-sm">Remember Me</label>
+                        </div>
+
+                        <div class="form-group mt-[30px]">
+                            <button type="submit" class="btn btn--primary w-full uppercase">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/tailwind.js"></script>
+</body>
+
+</html>
